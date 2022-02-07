@@ -2,6 +2,7 @@
 
 #This problem is based upon leetcode valid parentheses.
 
+
 def valid(s:str):
     stack=[]
     for i in s:
