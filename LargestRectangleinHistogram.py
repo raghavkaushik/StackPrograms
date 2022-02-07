@@ -8,14 +8,15 @@
 def rectangle(arr):
     maxarea=0
     stack=[]
-    for i, h in enumerate(arr):
+    for i,h in enumerate(arr):
         start=i
         while stack and stack[-1][1]>h:
             index,height=stack.pop()
-            maxarea=max(height*(i-index),maxarea)
+            maxarea=max(maxarea,height*(i-index))
             start=index
         stack.append((start,h))
 
     for i,h in stack:
-        maxarea=max(maxarea,h*(len(arr)-i))
+        maxarea=max(maxarea,(height*len(arr)-i))
     return maxarea
+
